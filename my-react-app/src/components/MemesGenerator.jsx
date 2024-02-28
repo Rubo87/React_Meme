@@ -36,7 +36,7 @@ const MemesGenerator = () => {
         </div>
         <div>
             <div>
-                {topText}
+                {topText} 
             </div>
             <img src={currentMeme.url} alt="" />
         </div>
