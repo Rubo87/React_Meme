@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,31 @@
 
 .read-the-docs {
   color: #888;
+}
+.memestext {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Impact', sans-serif;
+  color: rgb(251, 249, 249);
+  text-shadow: 2px 2px 4px black;
+  font-size: 30pt;
+}
+.memestextBottiom{
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Impact', sans-serif;
+  color: rgb(247, 246, 246);
+  text-shadow: 2px 2px 4px black;
+  font-size: 30pt;
+}
+
+img{
+  height: 500px;
+  width: 100%;
 }
