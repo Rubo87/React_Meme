@@ -1,5 +1,6 @@
-import { useEffect,useState } from "react";
+import { useEffect,useState, useRef } from "react";
 import { saveAs } from 'file-saver'
+import { toPng } from 'html-to-image';
 import '../App.css'
 
 
@@ -9,6 +10,7 @@ const MemesGenerator = () => {
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
   const currentIndex = memes.indexOf(currentMeme);
+  const elementRef = useRef(null);
 
     useEffect(() => {
         fetch('https://api.imgflip.com/get_memes')
@@ -36,12 +38,23 @@ const MemesGenerator = () => {
         setCurrentMeme(memes[nextIndex]);
       };
 
-
-      
         const downloadImage = () => {
           saveAs(currentMeme.url , 'image.jpg') // Put your image URL here.
         }
       
+        const htmlToImageConvert = () => {
+          toPng(elementRef.current, { cacheBust: false })
+            .then((dataUrl) => {
+              const link = document.createElement("a");
+              link.download = "my-image-name.png";
+              link.href = dataUrl;
+              link.click();
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        };
+       
     return ( 
         <>
         <div >
@@ -56,9 +69,9 @@ const MemesGenerator = () => {
         <button onClick={handleRandom}>Random Image</button>
         <button onClick={handlePrev}>previous</button>
         <button onClick={handleNext}>next</button>
-        <button onClick={downloadImage}>Download!</button>
+        <button onClick={htmlToImageConvert}>Download!</button>
         </div>
-        <div>
+        <div ref={elementRef}>
             <div className="memestext">
                 {topText} 
             </div>
