@@ -24,7 +24,7 @@ const MemesGenerator = () => {
           .catch(error => console.error('Error fetching memes:', error));
       }, []);
 
-
+//BUTTON FUNCTIONS
       const handleRandom= () => {
         const randomImageMeme = Math.floor(Math.random() * memes.length);
         setCurrentMeme(memes[randomImageMeme]);
@@ -57,7 +57,7 @@ const MemesGenerator = () => {
       const handleImageUpload = (e) => {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
-        localStorage.setItem("selectedImage", imageUrl);
+        localStorage.setItem("selectedImage", e.target.files);
       };
     return ( 
         <>
