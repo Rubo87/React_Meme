@@ -5,6 +5,9 @@
   padding: 2rem;
   text-align: center;
 }
+body{
+  background: linear-gradient(#210070 30%, #213970 50%) !important;
+}
 
 .logo {
   height: 6em;
@@ -45,6 +48,8 @@
 .memestextBottiom {
   position: absolute;
   text-align: center;
+  right: 0;
+  left: 0;
   font-family: 'Impact', sans-serif;
   text-shadow: 2px 2px 4px black;
   font-size: 30pt;
@@ -53,6 +58,8 @@
 .memestext {
   position: absolute;
   top: 25%;
+  right: 0;
+  left: 0;
   font-family: 'Impact', sans-serif;
   color: rgb(237, 3, 3);
   text-shadow: 2px 2px 4px black;
@@ -69,4 +76,21 @@ img {
   height: 100%;
   object-fit: cover;
   margin-top: 20px;
+}
+
+.css-13iepjl {
+  width: 40% !important;
+  margin: 5px;
+}
+
+.upload {
+  margin: 10px;
+}
+
+.Inputs {
+  display: flex;
+  flex-direction: row;
+}
+.divImage{
+  position: relative;
 }

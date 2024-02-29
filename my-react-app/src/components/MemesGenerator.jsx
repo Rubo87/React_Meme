@@ -63,15 +63,17 @@ const MemesGenerator = () => {
         <>
      
         <div >
-        <Input focusBorderColor='lime' placeholder='Top Text'
-        type="text" 
-        value={memes.topText} 
-        onChange={(e) => setTopText(e.target.value)} />
-        <Input focusBorderColor='lime' placeholder='Bottom Text'
-        type="text" 
-        value={memes.bottomText} 
-        onChange={(e) => setBottomText(e.target.value)} />
-        <input type="file" onChange={handleImageUpload} />
+        <div className="Inputs"> 
+          <Input focusBorderColor='lime' placeholder='Top Text'
+          type="text" 
+          value={memes.topText} 
+          onChange={(e) => setTopText(e.target.value)} />
+          <Input focusBorderColor='lime' placeholder='Bottom Text'
+          type="text" 
+          value={memes.bottomText} 
+          onChange={(e) => setBottomText(e.target.value)} />
+          <input className="upload" type="file" onChange={handleImageUpload} />
+        </div>
         <Stack direction='row' spacing={4}>
         <Button onClick={handleRandom}>Random Image</Button>
         <Button onClick={handlePrev}>previous</Button>
@@ -81,7 +83,7 @@ const MemesGenerator = () => {
         
         </div>
         
-        <div ref={elementRef}>
+        <div ref={elementRef} className="divImage">
             <div className="memestext">
                 {topText} 
             </div>
