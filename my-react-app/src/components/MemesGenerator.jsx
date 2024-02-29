@@ -1,5 +1,7 @@
 import { useEffect,useState } from "react";
+import { saveAs } from 'file-saver'
 import '../App.css'
+
 
 const MemesGenerator = () => {
     const [memes, setMemes] = useState([]);
@@ -34,6 +36,12 @@ const MemesGenerator = () => {
         setCurrentMeme(memes[nextIndex]);
       };
 
+
+      
+        const downloadImage = () => {
+          saveAs(currentMeme.url , 'image.jpg') // Put your image URL here.
+        }
+      
     return ( 
         <>
         <div >
@@ -48,6 +56,7 @@ const MemesGenerator = () => {
         <button onClick={handleRandom}>Random Image</button>
         <button onClick={handlePrev}>previous</button>
         <button onClick={handleNext}>next</button>
+        <button onClick={downloadImage}>Download!</button>
         </div>
         <div>
             <div className="memestext">
